@@ -1,0 +1,40 @@
+{
+    "name": "@elizaos/plugin-youtube-to-text",
+    "version": "0.0.1",
+    "description": "Youtube to text plugin",
+    "type": "module",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "exports": {
+        "./package.json": "./package.json",
+        ".": {
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            }
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup --format esm --dts",
+        "dev": "tsup --format esm --dts --watch",
+        "lint": "eslint --fix --cache"
+    },
+    "dependencies": {
+        "@distube/ytdl-core": "^4.16.4",
+        "@elizaos/core": "workspace:*",
+        "@huggingface/transformers": "^3.3.3",
+        "tsup": "8.3.6",
+        "wavefile": "11.0.0"
+    },
+    "devDependencies": {
+        "@types/node": "20.17.9",
+        "@typescript-eslint/eslint-plugin": "8.16.0",
+        "@typescript-eslint/parser": "8.16.0",
+        "typescript": "5.6.3",
+        "vitest": "^1.2.1"
+    }
+}
